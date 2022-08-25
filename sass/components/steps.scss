@@ -32,11 +32,13 @@
       background-color: #f6f6f6;
       padding: 2rem;
       border-radius: 1.5rem;
+      cursor: pointer;
       @include mixins.box-shadow-2(variables.$grey-shadow);
 
       @media screen and (min-width: variables.$desktop){
         width: 100%;
       }
+
 
 
       &:before{
@@ -65,5 +67,17 @@
         font-weight: fontweight.$bold;
       }
     }
+
+    > li:hover i{
+      color: variables.$purple;
+      transition: color 0.2s ease-in-out;
+    }
+
+    > li:hover{
+      background-color: #ebe4f5;
+      transition: all 0.2s ease-in-out;
+    }
+
+
   }
 }

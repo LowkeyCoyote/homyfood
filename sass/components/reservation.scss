@@ -23,6 +23,13 @@
     color: white;
     @include mixins.box-shadow-1(variables.$black-shadow);
     @include mixins.main-bg-linear-gradient(variables.$purple, variables.$pink);
+    opacity: 1;
+  }
+
+  &__button:hover{
+    opacity: 0.8;
+    transition: all 0.1s ease-in-out;
+
   }
 
   @media screen and (min-width: variables.$tablett){
