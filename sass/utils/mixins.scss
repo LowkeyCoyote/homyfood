@@ -1,0 +1,13 @@
+@use "variables";
+
+@mixin main-bg-linear-gradient($color1, $color2){
+    background: linear-gradient(0, $color1 0%,$color2 100%);
+}
+
+@mixin box-shadow-1($shadow-color){
+    box-shadow: 0 0 0.5rem $shadow-color;
+}
+
+@mixin box-shadow-2($shadow-color-2){
+    box-shadow: 2px 3px 8px -2px $shadow-color-2;
+}

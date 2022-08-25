@@ -1,0 +1,32 @@
+@use "../../sass/utils/variables";
+@use "../../sass/utils/fontweight";
+
+.localization{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: variables.$grey;
+  color: variables.$dark-grey;
+  padding: 1.2rem 0;
+  z-index: -1;
+
+  > i{
+    font-size: 1rem;
+  }
+
+  > h2{
+    font-size: 1.2rem;
+    font-weight: fontweight.$medium;
+  }
+
+  @media screen and (min-width: variables.$tablett){
+    > i{
+      font-size: 1.1rem;
+    }
+
+    > h2{
+      font-size: 1.3rem;
+    }
+  }
+}
