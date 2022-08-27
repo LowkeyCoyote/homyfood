@@ -1,0 +1,143 @@
+@use "../../sass/utils/variables";
+@use "../../sass/utils/fontweight";
+@use "../../sass/utils/mixins";
+
+
+.banner {
+  z-index: -999;
+}
+
+.banner img {
+  object-fit: cover;
+  height: 16rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.main-section {
+  width: 100%;
+  background-color: variables.$grey;
+  border-radius: 2.5rem 2.5rem 0 0;
+  padding: 2rem 1rem 4rem 1rem;
+  margin-top: -3rem;
+  position: relative;
+
+  @media screen and (min-width:variables.$tablett){
+    padding: 2rem 4rem 4rem 4rem;
+  }
+  @media screen and (min-width:variables.$desktop){
+    padding: 2rem 1rem 4rem 1rem;
+  }
+
+  & .header-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & h2 {
+      font-family: "Shrikhand", sans-serif;
+      font-size: 1.7rem;
+
+      @media screen and (min-width:variables.$tablett){
+        font-size: 2rem;
+      }
+    }
+
+    & i {
+      @include mixins.heart(transparent);
+      margin-right: 1rem;
+
+      &:hover {
+        @include mixins.main-bg-linear-gradient(variables.$purple, variables.$pink);
+        @include mixins.heart-hover;
+      }
+    }
+  }
+
+  &__button{
+    @include mixins.button();
+    display: block;
+    width: max-content;
+    margin: auto;
+}
+
+  &__button:hover{
+    @include mixins.button-hover();
+  }
+
+.menus{
+  padding: 2rem 0;
+  @media screen and (min-width:variables.$desktop){
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__type{
+    font-weight: fontweight.$thin;
+    color: variables.$dark-grey;
+    position: relative;
+    margin-bottom: 1.5rem;
+    @media screen and (min-width:variables.$desktop){
+      margin-left: 0.5rem;
+    }
+
+  }
+
+  &__type:after{
+    content : "";
+    position: absolute;
+    top : 1.6rem;
+    left: 0;
+    height: 3px;
+    width: 3rem;
+    background-color: variables.$lightgreen;
+  }
+
+  .menu{
+
+    &__card{
+      background-color: white;
+      margin: 1rem 0;
+      border-radius: 0.8rem;
+      padding: 1rem;
+      cursor: pointer;
+      @include mixins.box-shadow-2(variables.$grey-shadow);
+
+      &__title{
+        font-size: 1.1rem;
+        margin-bottom: 0.2rem;
+      }
+
+      &__description{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & p{
+          font-weight: fontweight.$thin;
+          color: variables.$dark-grey;
+        }
+
+        & h5{
+          font-size: 0.9rem;
+        }
+      }
+      &:hover{
+        transform: scale(1.02);
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+}
+
+.container{
+  margin-bottom: 2.5rem;
+  @media screen and (min-width:variables.$desktop){
+    flex-basis: 30%;
+  }
+}}
+
+
+
