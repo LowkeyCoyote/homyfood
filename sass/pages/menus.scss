@@ -71,7 +71,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
   }
 
   &__type{
@@ -104,6 +104,15 @@
       padding: 1rem;
       cursor: pointer;
       @include mixins.box-shadow-2(variables.$grey-shadow);
+
+      @for $i from 1 through 10{
+        &-fade-in-#{$i}{
+          -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
+          animation: fade-in 500ms ease-in;
+          animation-delay: $i*200ms;
+        }
+      }
+
 
       &__title{
         font-size: 1.1rem;
@@ -138,6 +147,21 @@
     flex-basis: 30%;
   }
 }}
+
+
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 
 
 

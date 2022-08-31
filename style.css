@@ -319,6 +319,13 @@ footer .footer__list i {
     flex-direction: row;
     justify-content: space-between;
   }
+  footer .footer__list a {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+  footer .footer__list i {
+    font-size: 1.1rem;
+  }
   footer .footer__title {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
@@ -411,7 +418,7 @@ footer .footer__list i {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
   }
 }
 .main-section .menus__type {
@@ -442,6 +449,56 @@ footer .footer__list i {
   cursor: pointer;
   box-shadow: 2px 3px 8px -2px #c4c4c4;
 }
+.main-section .menus .menu__card-fade-in-1 {
+  -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
+  animation: fade-in 500ms ease-in;
+  animation-delay: 200ms;
+}
+.main-section .menus .menu__card-fade-in-2 {
+  -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
+  animation: fade-in 500ms ease-in;
+  animation-delay: 400ms;
+}
+.main-section .menus .menu__card-fade-in-3 {
+  -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
+  animation: fade-in 500ms ease-in;
+  animation-delay: 600ms;
+}
+.main-section .menus .menu__card-fade-in-4 {
+  -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
+  animation: fade-in 500ms ease-in;
+  animation-delay: 800ms;
+}
+.main-section .menus .menu__card-fade-in-5 {
+  -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
+  animation: fade-in 500ms ease-in;
+  animation-delay: 1000ms;
+}
+.main-section .menus .menu__card-fade-in-6 {
+  -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
+  animation: fade-in 500ms ease-in;
+  animation-delay: 1200ms;
+}
+.main-section .menus .menu__card-fade-in-7 {
+  -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
+  animation: fade-in 500ms ease-in;
+  animation-delay: 1400ms;
+}
+.main-section .menus .menu__card-fade-in-8 {
+  -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
+  animation: fade-in 500ms ease-in;
+  animation-delay: 1600ms;
+}
+.main-section .menus .menu__card-fade-in-9 {
+  -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
+  animation: fade-in 500ms ease-in;
+  animation-delay: 1800ms;
+}
+.main-section .menus .menu__card-fade-in-10 {
+  -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
+  animation: fade-in 500ms ease-in;
+  animation-delay: 2000ms;
+}
 .main-section .menus .menu__card__title {
   font-size: 1.1rem;
   margin-bottom: 0.2rem;
@@ -468,6 +525,17 @@ footer .footer__list i {
 @media screen and (min-width: 1024px) {
   .main-section .container {
     flex-basis: 30%;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
