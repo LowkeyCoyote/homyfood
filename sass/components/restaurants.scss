@@ -116,7 +116,7 @@
   position: fixed;
   display: grid;
   place-items: center;
-  animation: fade-out 500ms 2000ms both;
+  animation: fade-out 500ms 200ms both;
   z-index: 1;
 }
 
@@ -135,6 +135,8 @@
   border: 8px solid ;
   border-color: variables.$purple variables.$pink variables.$purple variables.$pink ;
   animation: rotate 1.3s linear infinite}
+
+
 
 
 @keyframes fade-out {

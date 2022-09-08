@@ -68,42 +68,44 @@
     @include mixins.button();
     display: block;
     width: max-content;
-    margin: auto;
+  margin: auto;
 }
 
   &__button:hover{
     @include mixins.button-hover();
   }
 
-.menus{
-  padding: 2rem 0;
-  @media screen and (min-width:variables.$desktop){
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: start;
-  }
-
-  &__type{
-    font-weight: fontweight.$thin;
-    color: variables.$dark-grey;
-    position: relative;
-    margin-bottom: 1.5rem;
+  .menus{
+    padding: 2rem 0;
     @media screen and (min-width:variables.$desktop){
-      margin-left: 0.5rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: start;
     }
 
-  }
+    &__type{
+      font-weight: fontweight.$thin;
+      color: variables.$dark-grey;
+      position: relative;
+      margin-bottom: 1.5rem;
+      @media screen and (min-width:variables.$desktop){
+        margin-left: 0.5rem;
+      }
 
-  &__type:after{
-    content : "";
-    position: absolute;
-    top : 1.6rem;
-    left: 0;
-    height: 3px;
-    width: 3rem;
-    background-color: variables.$lightgreen;
+    }
+
+    &__type:after{
+      content : "";
+      position: absolute;
+      top : 1.6rem;
+      left: 0;
+      height: 3px;
+      width: 3rem;
+      background-color: variables.$lightgreen;
+    }
   }
+}
 
   .menu{
 
@@ -111,12 +113,15 @@
       background-color: white;
       margin: 1rem 0;
       border-radius: 0.8rem;
-      padding: 1rem;
       cursor: pointer;
       @include mixins.box-shadow-2(variables.$grey-shadow);
       -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
       animation: fade-in 500ms ease-in;
       animation-fill-mode: both;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      overflow: hidden;
 
       @for $i from 1 through 10{
         &-fade-in-#{$i}{
@@ -124,45 +129,84 @@
         }
       }
 
-
-      &__title{
-        font-size: 1.1rem;
-        margin-bottom: 0.2rem;
-      }
-
       &__description{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        padding: 1rem 0 1rem 1rem;
+        overflow: hidden;
 
-        & p{
-          font-weight: fontweight.$thin;
-          color: variables.$dark-grey;
+        h4, p{
           text-overflow: ellipsis;
           overflow: hidden;
           white-space: nowrap;
+          display: block;
+          width: 100%;
         }
 
-        & h5{
+        & p{
           font-size: 0.9rem;
+          font-weight: fontweight.$thin;
+          color: variables.$dark-grey;
         }
+
+        & h4{
+          font-size: 1.1rem;
+          margin-bottom: 0.2rem;
+        }
+
       }
+
+      & h5{
+        font-size: 0.9rem;
+      }
+
+      &__price{
+        padding: 1rem 0 1rem 0.5rem;
+        align-items: flex-end;
+        margin: auto 1rem 0 auto;
+      }
+
       &:hover{
         transform: scale(1.02);
         transition: all 0.2s ease-in-out;
       }
+
+      &__check{
+        background-color: variables.$lightgreen;
+        padding: 0;
+        width: 4rem;
+        display: grid;
+        place-content: center;
+        flex-shrink: 0;
+        margin-right: -65px;
+
+
+        & i{
+          color: variables.$lightgreen;
+          background-color: white;
+          padding: 0.3rem;
+          border-radius: 999px;
+        }
+      }
+    }
+    &:hover .menu__card__check{
+      margin-right: 0;
+      transition: all 0.5s ease-in-out;
+    }
+
+    &:hover i{
+      transform: rotate(360deg);
+      transition-delay: 0.2s;
+
+      transition: all 0.5s ease-in-out;
     }
   }
-}
+
 
 .container{
   margin-bottom: 2.5rem;
   @media screen and (min-width:variables.$desktop){
     flex-basis: 30%;
   }
-}}
-
-
+}
 
 @keyframes fade-in {
   0% {
