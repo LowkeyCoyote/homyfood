@@ -23,6 +23,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+input[type=checkbox] {
+  display: none;
+}
+
 header {
   font-family: "Shrikhand", sans-serif;
   text-align: center;
@@ -274,17 +278,39 @@ header {
   font-size: 1.2rem;
   color: #313131;
 }
-.restaurants__description > i {
+.restaurants__description > label {
   position: absolute;
   right: 1.5rem;
   bottom: 2rem;
+}
+.restaurants__description > #heart-like-1:checked ~ label > i,
+.restaurants__description #heart-like-2:checked ~ label > i,
+.restaurants__description #heart-like-3:checked ~ label > i,
+.restaurants__description #heart-like-4:checked ~ label > i {
+  background: linear-gradient(0, #9356DC 0%, #FF79DA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px white;
+  transition: all 0.2s ease-in-out;
+}
+.restaurants__description > #heart-like-1:not(:checked) ~ label > i,
+.restaurants__description #heart-like-2:not(:checked) ~ label > i,
+.restaurants__description #heart-like-3:not(:checked) ~ label > i,
+.restaurants__description #heart-like-4:not(:checked) ~ label > i {
   font-size: 1.5rem;
   color: white;
   -webkit-background-clip: text;
   -webkit-text-stroke: 1px black;
   cursor: pointer;
 }
-.restaurants__description > i:hover {
+.restaurants__description i {
+  font-size: 1.5rem;
+  color: white;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 1px black;
+  cursor: pointer;
+}
+.restaurants__description i:hover {
   background: linear-gradient(0, #9356DC 0%, #FF79DA 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -292,6 +318,45 @@ header {
   transition: all 0.2s ease-in-out;
 }
 
+.loading {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  display: grid;
+  place-items: center;
+  animation: fade-out 500ms 2000ms both;
+  z-index: 1;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: #9356DC #FF79DA #9356DC #FF79DA;
+  animation: rotate 1.3s linear infinite;
+}
+
+@keyframes fade-out {
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 footer {
   background-color: #313131;
   padding: 2rem 1rem;
@@ -380,6 +445,20 @@ footer .footer__list i {
     font-size: 2rem;
   }
 }
+.main-section .header-menu > #heart-like:checked ~ label > i {
+  background: linear-gradient(0, #9356DC 0%, #FF79DA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px white;
+  transition: all 0.2s ease-in-out;
+}
+.main-section .header-menu > #heart-like:not(:checked) ~ label > i {
+  font-size: 1.5rem;
+  color: white;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 1px black;
+  cursor: pointer;
+}
 .main-section .header-menu i {
   font-size: 1.5rem;
   color: transparent;
@@ -448,56 +527,39 @@ footer .footer__list i {
   padding: 1rem;
   cursor: pointer;
   box-shadow: 2px 3px 8px -2px #c4c4c4;
+  -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
+  animation: fade-in 500ms ease-in;
+  animation-fill-mode: both;
 }
 .main-section .menus .menu__card-fade-in-1 {
-  -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
-  animation: fade-in 500ms ease-in;
-  animation-delay: 200ms;
+  animation-delay: 150ms;
 }
 .main-section .menus .menu__card-fade-in-2 {
-  -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
-  animation: fade-in 500ms ease-in;
-  animation-delay: 400ms;
+  animation-delay: 300ms;
 }
 .main-section .menus .menu__card-fade-in-3 {
-  -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
-  animation: fade-in 500ms ease-in;
-  animation-delay: 600ms;
+  animation-delay: 450ms;
 }
 .main-section .menus .menu__card-fade-in-4 {
-  -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
-  animation: fade-in 500ms ease-in;
-  animation-delay: 800ms;
+  animation-delay: 600ms;
 }
 .main-section .menus .menu__card-fade-in-5 {
-  -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
-  animation: fade-in 500ms ease-in;
-  animation-delay: 1000ms;
+  animation-delay: 750ms;
 }
 .main-section .menus .menu__card-fade-in-6 {
-  -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
-  animation: fade-in 500ms ease-in;
-  animation-delay: 1200ms;
+  animation-delay: 900ms;
 }
 .main-section .menus .menu__card-fade-in-7 {
-  -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
-  animation: fade-in 500ms ease-in;
-  animation-delay: 1400ms;
+  animation-delay: 1050ms;
 }
 .main-section .menus .menu__card-fade-in-8 {
-  -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
-  animation: fade-in 500ms ease-in;
-  animation-delay: 1600ms;
+  animation-delay: 1200ms;
 }
 .main-section .menus .menu__card-fade-in-9 {
-  -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
-  animation: fade-in 500ms ease-in;
-  animation-delay: 1800ms;
+  animation-delay: 1350ms;
 }
 .main-section .menus .menu__card-fade-in-10 {
-  -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
-  animation: fade-in 500ms ease-in;
-  animation-delay: 2000ms;
+  animation-delay: 1500ms;
 }
 .main-section .menus .menu__card__title {
   font-size: 1.1rem;
@@ -511,6 +573,9 @@ footer .footer__list i {
 .main-section .menus .menu__card__description p {
   font-weight: 300;
   color: #313131;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .main-section .menus .menu__card__description h5 {
   font-size: 0.9rem;
@@ -529,11 +594,11 @@ footer .footer__list i {
 }
 
 @keyframes fade-in {
-  from {
+  0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
-  to {
+  100% {
     opacity: 1;
     transform: translateY(0);
   }

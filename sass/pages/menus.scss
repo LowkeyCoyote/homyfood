@@ -43,6 +43,16 @@
       }
     }
 
+    & > #heart-like:checked ~ label > i{
+      @include mixins.main-bg-linear-gradient(variables.$purple, variables.$pink);
+      @include mixins.heart-hover;
+    }
+
+    & > #heart-like:not(:checked) ~ label > i{
+      @include mixins.heart(white);
+    }
+
+
     & i {
       @include mixins.heart(transparent);
       margin-right: 1rem;
@@ -104,12 +114,13 @@
       padding: 1rem;
       cursor: pointer;
       @include mixins.box-shadow-2(variables.$grey-shadow);
+      -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
+      animation: fade-in 500ms ease-in;
+      animation-fill-mode: both;
 
       @for $i from 1 through 10{
         &-fade-in-#{$i}{
-          -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
-          animation: fade-in 500ms ease-in;
-          animation-delay: $i*200ms;
+          animation-delay: $i*150ms;
         }
       }
 
@@ -127,6 +138,9 @@
         & p{
           font-weight: fontweight.$thin;
           color: variables.$dark-grey;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
         }
 
         & h5{
@@ -151,11 +165,11 @@
 
 
 @keyframes fade-in {
-  from {
+  0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
-  to {
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
