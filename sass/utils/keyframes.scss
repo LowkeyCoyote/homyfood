@@ -1,0 +1,32 @@
+// keyframes
+
+/*
+Menu cards animation
+ */
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*
+Loading spinner animation
+ */
+
+@keyframes fade-out {
+  100%{
+    transform: scale(0);
+  }
+}
+
+@keyframes rotate {
+  100%{
+    transform: rotate(360deg);
+  }
+}

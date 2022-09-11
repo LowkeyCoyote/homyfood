@@ -1,6 +1,7 @@
 @use "../../sass/utils/variables";
 @use "../../sass/utils/fontweight";
 @use "../../sass/utils/mixins";
+@use "../../sass/utils/keyframes";
 
 
 .banner {
@@ -22,14 +23,14 @@
   margin-top: -3rem;
   position: relative;
 
-  @media screen and (min-width:variables.$tablett){
+  @media screen and (min-width: variables.$tablett) {
     padding: 2rem 4rem 4rem 4rem;
   }
-  @media screen and (min-width:variables.$desktop){
+  @media screen and (min-width: variables.$desktop) {
     padding: 2rem 1rem 4rem 1rem;
   }
 
-  & .header-menu{
+  & .header-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,17 +39,19 @@
       font-family: "Shrikhand", sans-serif;
       font-size: 1.7rem;
 
-      @media screen and (min-width:variables.$tablett){
+      @media screen and (min-width: variables.$tablett) {
         font-size: 2rem;
       }
     }
 
-    & > #heart-like:checked ~ label > i{
+    // heart animation //
+
+    & > #heart-like:checked ~ label > i {
       @include mixins.main-bg-linear-gradient(variables.$purple, variables.$pink);
       @include mixins.heart-hover;
     }
 
-    & > #heart-like:not(:checked) ~ label > i{
+    & > #heart-like:not(:checked) ~ label > i {
       @include mixins.heart(white);
     }
 
@@ -64,41 +67,40 @@
     }
   }
 
-  &__button{
+  &__button {
     @include mixins.button();
     display: block;
     width: max-content;
-  margin: auto;
-}
+    margin: auto;
+  }
 
-  &__button:hover{
+  &__button:hover {
     @include mixins.button-hover();
   }
 
-  .menus{
+  .menus {
     padding: 2rem 0;
-    @media screen and (min-width:variables.$desktop){
+    @media screen and (min-width: variables.$desktop) {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: start;
     }
 
-    &__type{
+    &__type {
       font-weight: fontweight.$thin;
       color: variables.$dark-grey;
       position: relative;
       margin-bottom: 1.5rem;
-      @media screen and (min-width:variables.$desktop){
+      @media screen and (min-width: variables.$desktop) {
         margin-left: 0.5rem;
       }
-
     }
 
-    &__type:after{
-      content : "";
+    &__type:after {
+      content: "";
       position: absolute;
-      top : 1.6rem;
+      top: 1.6rem;
       left: 0;
       height: 3px;
       width: 3rem;
@@ -107,117 +109,107 @@
   }
 }
 
-  .menu{
+.menu {
 
-    &__card{
-      background-color: white;
-      margin: 1rem 0;
-      border-radius: 0.8rem;
-      cursor: pointer;
-      @include mixins.box-shadow-2(variables.$grey-shadow);
-      -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
-      animation: fade-in 500ms ease-in;
-      animation-fill-mode: both;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+  &__card {
+    background-color: white;
+    margin: 1rem 0;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    @include mixins.box-shadow-2(variables.$grey-shadow);
+    -webkit-animation: fade-in 500ms ease-in; /* Chrome, Safari, Opera */
+    animation: fade-in 500ms ease-in;
+    animation-fill-mode: both;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+
+    @for $i from 1 through 10 {
+      &-fade-in-#{$i} {
+        animation-delay: $i*150ms;
+      }
+    }
+
+    &__description {
+      padding: 1rem 0 1rem 1rem;
       overflow: hidden;
 
-      @for $i from 1 through 10{
-        &-fade-in-#{$i}{
-          animation-delay: $i*150ms;
-        }
-      }
-
-      &__description{
-        padding: 1rem 0 1rem 1rem;
+      h4, p {
+        text-overflow: ellipsis;
         overflow: hidden;
-
-        h4, p{
-          text-overflow: ellipsis;
-          overflow: hidden;
-          white-space: nowrap;
-          display: block;
-          width: 100%;
-        }
-
-        & p{
-          font-size: 0.9rem;
-          font-weight: fontweight.$thin;
-          color: variables.$dark-grey;
-        }
-
-        & h4{
-          font-size: 1.1rem;
-          margin-bottom: 0.2rem;
-        }
-
+        white-space: nowrap;
+        display: block;
+        width: 100%;
       }
 
-      & h5{
+      & p {
         font-size: 0.9rem;
+        font-weight: fontweight.$thin;
+        color: variables.$dark-grey;
       }
 
-      &__price{
-        padding: 1rem 0 1rem 0.5rem;
-        align-items: flex-end;
-        margin: auto 1rem 0 auto;
+      & h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.2rem;
       }
 
-      &:hover{
-        transform: scale(1.02);
-        transition: all 0.2s ease-in-out;
-      }
-
-      &__check{
-        background-color: variables.$lightgreen;
-        padding: 0;
-        width: 4rem;
-        display: grid;
-        place-content: center;
-        flex-shrink: 0;
-        margin-right: -65px;
-
-
-        & i{
-          color: variables.$lightgreen;
-          background-color: white;
-          padding: 0.3rem;
-          border-radius: 999px;
-        }
-      }
-    }
-    &:hover .menu__card__check{
-      margin-right: 0;
-      transition: all 0.5s ease-in-out;
     }
 
-    &:hover i{
-      transform: rotate(360deg);
-      transition-delay: 0.2s;
+    & h5 {
+      font-size: 0.9rem;
+    }
 
-      transition: all 0.5s ease-in-out;
+    &__price {
+      padding: 1rem 0 1rem 0.5rem;
+      align-items: flex-end;
+      margin: auto 1rem 0 auto;
+    }
+
+    &:hover {
+      transform: scale(1.02);
+      transition: all 0.2s ease-in-out;
+    }
+
+    &__check {
+      background-color: variables.$lightgreen;
+      padding: 0;
+      width: 4rem;
+      display: grid;
+      place-content: center;
+      flex-shrink: 0;
+      margin-right: -65px;
+
+
+      & i {
+        color: variables.$lightgreen;
+        background-color: white;
+        padding: 0.3rem;
+        border-radius: 999px;
+      }
     }
   }
 
+  &:hover .menu__card__check {
+    margin-right: 0;
+    transition: all 0.5s ease-in-out;
+  }
 
-.container{
+  &:hover i {
+    transform: rotate(360deg);
+    transition-delay: 0.2s;
+
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.container {
   margin-bottom: 2.5rem;
-  @media screen and (min-width:variables.$desktop){
+  @media screen and (min-width: variables.$desktop) {
     flex-basis: 30%;
   }
 }
 
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 
 

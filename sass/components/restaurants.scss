@@ -1,6 +1,7 @@
 @use "../../sass/utils/variables";
 @use "../../sass/utils/fontweight";
 @use "../../sass/utils/mixins";
+@use "../../sass/utils/keyframes";
 
 .restaurants {
   background-color: rgb(250, 250, 250);
@@ -14,51 +15,50 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    @media screen and (min-width: variables.$desktop){
+    @media screen and (min-width: variables.$desktop) {
       flex-wrap: wrap;
       flex-direction: row;
     }
 
-     & .restaurants__card {
+    & .restaurants__card {
       background-color: white;
       border-radius: 0.5rem;
       position: relative;
-       @include mixins.box-shadow-2(variables.$grey-shadow);
+      @include mixins.box-shadow-2(variables.$grey-shadow);
 
-       @media screen and (min-width: variables.$tablett){
-         flex: 40%;
-       }
-
-        @for $i from 1 through 4 {
-          &-#{$i}
-          {
-            background-image: url("../../assets/images/restaurants/restaurant-#{$i}.jpg");
-            background-size: cover;
-            background-position: center;
-            border-radius: 0.5rem 0.5rem 0 0;
-            height: 11rem;
-            position: relative;
-            display: block;
-          }
+      @media screen and (min-width: variables.$tablett) {
+        flex: 40%;
       }
 
-       &-new {
-         position: absolute;
-         right: 1rem;
-         top: 1rem;
-         background-color: variables.$lightgreen;
-         padding: 0.5rem;
-         border-radius: 2px;
-         color: darken(variables.$lightgreen, 40%);
-         font-weight: fontweight.$bold;
-         font-size: 0.8rem;
+      @for $i from 1 through 4 {
+        &-#{$i} {
+          background-image: url("../../assets/images/restaurants/restaurant-#{$i}.jpg");
+          background-size: cover;
+          background-position: center;
+          border-radius: 0.5rem 0.5rem 0 0;
+          height: 11rem;
+          position: relative;
+          display: block;
+        }
+      }
 
-       }
+      &-new {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        background-color: variables.$lightgreen;
+        padding: 0.5rem;
+        border-radius: 2px;
+        color: darken(variables.$lightgreen, 40%);
+        font-weight: fontweight.$bold;
+        font-size: 0.8rem;
+
+      }
     }
 
   }
 
-  &__card:hover{
+  &__card:hover {
     transform: scale(1.02);
     transition: all 0.2s ease-in-out;
   }
@@ -77,25 +77,21 @@
       color: variables.$dark-grey;
     }
 
-    & > label{
+    & > label {
       position: absolute;
       right: 1.5rem;
       bottom: 2rem;
     }
 
-    & > #heart-like-1:checked ~ label > i,
-     #heart-like-2:checked ~ label > i,
-     #heart-like-3:checked ~ label > i,
-     #heart-like-4:checked ~ label > i{
-      @include mixins.main-bg-linear-gradient(variables.$purple, variables.$pink);
-      @include mixins.heart-hover;
-    }
+    @for $i from 1 to 5 {
+      & > #heart-like-#{$i}:checked ~ label > i {
+        @include mixins.main-bg-linear-gradient(variables.$purple, variables.$pink);
+        @include mixins.heart-hover;
+      }
 
-    & > #heart-like-1:not(:checked) ~ label > i,
-    #heart-like-2:not(:checked) ~ label > i,
-    #heart-like-3:not(:checked) ~ label > i,
-    #heart-like-4:not(:checked) ~ label > i{
-      @include mixins.heart(white);
+      & > #heart-like-#{$i}:not(:checked) ~ label > i {
+        @include mixins.heart(white);
+      }
     }
 
     & i {
@@ -109,44 +105,3 @@
   }
 }
 
-.loading{
-  background-color : rgba(255, 255, 255, 0.8);
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  display: grid;
-  place-items: center;
-  animation: fade-out 500ms 200ms both;
-  z-index: 1;
-}
-
-.lds-dual-ring {
-  display: inline-block;
-  width: 80px;
-  height: 80px;
-}
-.lds-dual-ring:after {
-  content: " ";
-  display: block;
-  width: 80px;
-  height: 80px;
-  margin: 8px;
-  border-radius: 50%;
-  border: 8px solid ;
-  border-color: variables.$purple variables.$pink variables.$purple variables.$pink ;
-  animation: rotate 1.3s linear infinite}
-
-
-
-
-@keyframes fade-out {
-  100%{
-    transform: scale(0);
-  }
-}
-
-@keyframes rotate {
-  100%{
-    transform: rotate(360deg);
-  }
-}
