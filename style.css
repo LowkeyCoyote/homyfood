@@ -102,17 +102,17 @@ Loading spinner animation
   position: fixed;
   display: grid;
   place-items: center;
-  animation: fade-out 500ms 200ms both;
+  animation: fade-out 500ms 1200ms both;
   z-index: 1;
 }
 
-.lds-dual-ring {
+.loading-spinner {
   display: inline-block;
   width: 80px;
   height: 80px;
 }
 
-.lds-dual-ring:after {
+.loading-spinner {
   content: " ";
   display: block;
   width: 80px;
