@@ -92,15 +92,15 @@
       & > #heart-like-#{$i}:not(:checked) ~ label > i {
         @include mixins.heart(white);
       }
+
+      & > #heart-like-#{$i} ~ label > i:hover{
+        @include mixins.main-bg-linear-gradient(variables.$purple, variables.$pink);
+        @include mixins.heart-hover;
+      }
     }
 
     & i {
       @include mixins.heart(white);
-
-      &:hover {
-        @include mixins.main-bg-linear-gradient(variables.$purple, variables.$pink);
-        @include mixins.heart-hover;
-      }
     }
   }
 }

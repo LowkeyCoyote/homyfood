@@ -25,6 +25,14 @@ Loading spinner animation
     transform: rotate(360deg);
   }
 }
+@keyframes fill {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 *, :before, :after {
   box-sizing: border-box;
   margin: 0;
@@ -79,6 +87,14 @@ Loading spinner animation
     transform: rotate(360deg);
   }
 }
+@keyframes fill {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .loading {
   background-color: rgba(255, 255, 255, 0.8);
   width: 100%;
@@ -104,7 +120,7 @@ Loading spinner animation
   margin: 8px;
   border-radius: 50%;
   border: 8px solid;
-  border-color: #9356DC #FF79DA #9356DC #FF79DA;
+  border-color: rgb(147, 86, 220) rgb(255, 121, 218) rgb(147, 86, 220) rgb(255, 121, 218);
   animation: rotate 1.3s linear infinite;
 }
 
@@ -174,7 +190,7 @@ header {
   border-radius: 999px;
   color: white;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
-  background: linear-gradient(0, #9356DC 0%, #FF79DA 100%);
+  background: linear-gradient(0, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
   opacity: 1;
 }
 .reservation__button:hover {
@@ -259,7 +275,7 @@ header {
   font-weight: 500;
 }
 .steps__list > li:hover i {
-  color: #9356DC;
+  color: rgb(147, 86, 220);
   transition: color 0.2s ease-in-out;
 }
 .steps__list > li:hover {
@@ -291,6 +307,14 @@ Loading spinner animation
 @keyframes rotate {
   100% {
     transform: rotate(360deg);
+  }
+}
+@keyframes fill {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
   }
 }
 .restaurants {
@@ -391,74 +415,111 @@ Loading spinner animation
   bottom: 2rem;
 }
 .restaurants__description > #heart-like-1:checked ~ label > i {
-  background: linear-gradient(0, #9356DC 0%, #FF79DA 100%);
+  background: linear-gradient(0, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px white;
-  transition: all 0.2s ease-in-out;
+  animation: fill 0.3s ease-in;
+  transform: scale(1.02);
+  transition: all 0.3s;
 }
 .restaurants__description > #heart-like-1:not(:checked) ~ label > i {
   font-size: 1.5rem;
-  color: white;
+  color: transparent;
   -webkit-background-clip: text;
   -webkit-text-stroke: 1px black;
   cursor: pointer;
 }
-.restaurants__description > #heart-like-2:checked ~ label > i {
-  background: linear-gradient(0, #9356DC 0%, #FF79DA 100%);
+.restaurants__description > #heart-like-1 ~ label > i:hover {
+  background: linear-gradient(0, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px white;
-  transition: all 0.2s ease-in-out;
+  animation: fill 0.3s ease-in;
+  transform: scale(1.02);
+  transition: all 0.3s;
+}
+.restaurants__description > #heart-like-2:checked ~ label > i {
+  background: linear-gradient(0, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px white;
+  animation: fill 0.3s ease-in;
+  transform: scale(1.02);
+  transition: all 0.3s;
 }
 .restaurants__description > #heart-like-2:not(:checked) ~ label > i {
   font-size: 1.5rem;
-  color: white;
+  color: transparent;
   -webkit-background-clip: text;
   -webkit-text-stroke: 1px black;
   cursor: pointer;
 }
-.restaurants__description > #heart-like-3:checked ~ label > i {
-  background: linear-gradient(0, #9356DC 0%, #FF79DA 100%);
+.restaurants__description > #heart-like-2 ~ label > i:hover {
+  background: linear-gradient(0, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px white;
-  transition: all 0.2s ease-in-out;
+  animation: fill 0.3s ease-in;
+  transform: scale(1.02);
+  transition: all 0.3s;
+}
+.restaurants__description > #heart-like-3:checked ~ label > i {
+  background: linear-gradient(0, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px white;
+  animation: fill 0.3s ease-in;
+  transform: scale(1.02);
+  transition: all 0.3s;
 }
 .restaurants__description > #heart-like-3:not(:checked) ~ label > i {
   font-size: 1.5rem;
-  color: white;
+  color: transparent;
   -webkit-background-clip: text;
   -webkit-text-stroke: 1px black;
   cursor: pointer;
 }
-.restaurants__description > #heart-like-4:checked ~ label > i {
-  background: linear-gradient(0, #9356DC 0%, #FF79DA 100%);
+.restaurants__description > #heart-like-3 ~ label > i:hover {
+  background: linear-gradient(0, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px white;
-  transition: all 0.2s ease-in-out;
+  animation: fill 0.3s ease-in;
+  transform: scale(1.02);
+  transition: all 0.3s;
+}
+.restaurants__description > #heart-like-4:checked ~ label > i {
+  background: linear-gradient(0, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px white;
+  animation: fill 0.3s ease-in;
+  transform: scale(1.02);
+  transition: all 0.3s;
 }
 .restaurants__description > #heart-like-4:not(:checked) ~ label > i {
   font-size: 1.5rem;
-  color: white;
+  color: transparent;
   -webkit-background-clip: text;
   -webkit-text-stroke: 1px black;
   cursor: pointer;
 }
-.restaurants__description i {
-  font-size: 1.5rem;
-  color: white;
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 1px black;
-  cursor: pointer;
-}
-.restaurants__description i:hover {
-  background: linear-gradient(0, #9356DC 0%, #FF79DA 100%);
+.restaurants__description > #heart-like-4 ~ label > i:hover {
+  background: linear-gradient(0, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px white;
-  transition: all 0.2s ease-in-out;
+  animation: fill 0.3s ease-in;
+  transform: scale(1.02);
+  transition: all 0.3s;
+}
+.restaurants__description i {
+  font-size: 1.5rem;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 1px black;
+  cursor: pointer;
 }
 
 footer {
@@ -532,6 +593,14 @@ Loading spinner animation
     transform: rotate(360deg);
   }
 }
+@keyframes fill {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .banner {
   z-index: -999;
 }
@@ -576,18 +645,29 @@ Loading spinner animation
   }
 }
 .main-section .header-menu > #heart-like:checked ~ label > i {
-  background: linear-gradient(0, #9356DC 0%, #FF79DA 100%);
+  background: linear-gradient(0, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px white;
-  transition: all 0.2s ease-in-out;
+  animation: fill 0.3s ease-in;
+  transform: scale(1.02);
+  transition: all 0.3s;
 }
 .main-section .header-menu > #heart-like:not(:checked) ~ label > i {
   font-size: 1.5rem;
-  color: white;
+  color: transparent;
   -webkit-background-clip: text;
   -webkit-text-stroke: 1px black;
   cursor: pointer;
+}
+.main-section .header-menu > #heart-like ~ label > i:hover {
+  background: linear-gradient(0, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px white;
+  animation: fill 0.3s ease-in;
+  transform: scale(1.02);
+  transition: all 0.3s;
 }
 .main-section .header-menu i {
   font-size: 1.5rem;
@@ -597,19 +677,12 @@ Loading spinner animation
   cursor: pointer;
   margin-right: 1rem;
 }
-.main-section .header-menu i:hover {
-  background: linear-gradient(0, #9356DC 0%, #FF79DA 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1px white;
-  transition: all 0.2s ease-in-out;
-}
 .main-section__button {
   padding: 1rem 2rem;
   border-radius: 999px;
   color: white;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
-  background: linear-gradient(0, #9356DC 0%, #FF79DA 100%);
+  background: linear-gradient(0, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
   opacity: 1;
   display: block;
   width: max-content;

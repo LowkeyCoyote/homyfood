@@ -30,3 +30,13 @@ Loading spinner animation
     transform: rotate(360deg);
   }
 }
+
+@keyframes fill{
+  0%{
+    opacity: 0.6;
+  }
+
+  100%{
+    opacity: 1;
+  }
+}
