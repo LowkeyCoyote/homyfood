@@ -13,18 +13,24 @@ Menu cards animation
   }
 }
 /*
-Loading spinner animation
+Loading spinner fade-out
  */
 @keyframes fade-out {
   100% {
     transform: scale(0);
   }
 }
+/*
+Rotation annimation
+ */
 @keyframes rotate {
   100% {
     transform: rotate(360deg);
   }
 }
+/*
+Heart fill
+ */
 @keyframes fill {
   0% {
     opacity: 0.6;
@@ -75,18 +81,24 @@ Menu cards animation
   }
 }
 /*
-Loading spinner animation
+Loading spinner fade-out
  */
 @keyframes fade-out {
   100% {
     transform: scale(0);
   }
 }
+/*
+Rotation annimation
+ */
 @keyframes rotate {
   100% {
     transform: rotate(360deg);
   }
 }
+/*
+Heart fill
+ */
 @keyframes fill {
   0% {
     opacity: 0.6;
@@ -297,18 +309,24 @@ Menu cards animation
   }
 }
 /*
-Loading spinner animation
+Loading spinner fade-out
  */
 @keyframes fade-out {
   100% {
     transform: scale(0);
   }
 }
+/*
+Rotation annimation
+ */
 @keyframes rotate {
   100% {
     transform: rotate(360deg);
   }
 }
+/*
+Heart fill
+ */
 @keyframes fill {
   0% {
     opacity: 0.6;
@@ -581,18 +599,24 @@ Menu cards animation
   }
 }
 /*
-Loading spinner animation
+Loading spinner fade-out
  */
 @keyframes fade-out {
   100% {
     transform: scale(0);
   }
 }
+/*
+Rotation annimation
+ */
 @keyframes rotate {
   100% {
     transform: rotate(360deg);
   }
 }
+/*
+Heart fill
+ */
 @keyframes fill {
   0% {
     opacity: 0.6;
