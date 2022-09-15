@@ -16,7 +16,7 @@ Menu cards animation
 }
 
 /*
-Loading spinner animation
+Loading spinner fade-out
  */
 
 @keyframes fade-out {
@@ -25,11 +25,19 @@ Loading spinner animation
   }
 }
 
+/*
+Rotation annimation
+ */
+
 @keyframes rotate {
   100%{
     transform: rotate(360deg);
   }
 }
+
+/*
+Heart fill
+ */
 
 @keyframes fill{
   0%{
