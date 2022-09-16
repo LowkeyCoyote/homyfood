@@ -23,8 +23,8 @@
 @mixin heart-hover{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1px white;
-    animation: fill 0.3s ease-in;
+    -webkit-text-stroke: 0 white;
+    animation: fill 0.4s ease-in-out;
     transform: scale(1.02);
     transition: all 0.3s;
 }
